@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    frontend:
+        build: .
+        restart: always
+        volumes:
+          - .:/app
+          - /app/node_modules
+        ports:
+            - 3000:3000
+        image: app:react
+        container_name: react_container
+        command: npm start
+
+
+
